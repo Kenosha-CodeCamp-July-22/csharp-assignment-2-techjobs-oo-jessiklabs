@@ -19,13 +19,13 @@ namespace TechJobsOO
             Id = nextId;
             nextId++;
         }
-        public TechJob(string name, Employer employerName, Location location, PositionType type, CoreCompetency competency) : this()
+        public TechJob(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
             this.Name = name;
             this.EmployerName = employerName;
-            this.EmployerLocation = location;
-            this.JobType = type;
-            this.JobCoreCompetency = competency;
+            this.EmployerLocation = employerLocation;
+            this.JobType = jobType;
+            this.JobCoreCompetency = jobCoreCompetency;
         }
         // TODO: Generate Equals() and GetHashCode() methods.
         public override bool Equals(object obj)
