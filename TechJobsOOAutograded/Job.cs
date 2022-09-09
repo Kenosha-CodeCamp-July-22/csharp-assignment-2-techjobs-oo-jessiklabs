@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+
 namespace TechJobsOO
 {
     public class TechJob
@@ -37,6 +39,52 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
-       
+
+        public override string ToString()
+        {
+            string fullString = "\nID: " + this.Id;
+            if(this.EmployerName != null)
+            {
+                fullString += "\nName: " + this.EmployerName;
+            } else
+            {
+                fullString += "\nName: Data not available";
+            }
+            if (this.EmployerLocation != null)
+            {
+                fullString += "\nLocation: " + this.EmployerLocation;
+            }
+            else
+            {
+                fullString += "\nLocation: Data not available";
+            }
+            if (this.JobType != null)
+            {
+                fullString += "\nPosition Type: " + this.JobType;
+            }
+            else
+            {
+                fullString += "\nPosition Type: Data not available";
+            }
+            if (this.JobCoreCompetency != null)
+            {
+                fullString += "\nCore Competency: " + this.JobCoreCompetency;
+            }
+            else
+            {
+                fullString += "\nCore Competency: Data not available";
+            }
+            if(this.Name == null && this.EmployerName == null && this.EmployerLocation == null && this.JobType == null && this.JobCoreCompetency == null)
+            {
+                return "OOPS!  This job does not seem to exist.";
+            } else
+            {
+                return fullString;
+            }
+
+
+
+        }
+
     }
 }
