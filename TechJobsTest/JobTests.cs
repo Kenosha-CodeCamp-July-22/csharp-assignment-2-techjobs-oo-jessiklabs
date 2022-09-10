@@ -2,6 +2,7 @@
 using TechJobsOO;
 using System;
 
+
 namespace TechJobsTests
 {
     [TestClass]
@@ -64,7 +65,8 @@ namespace TechJobsTests
             Location location = new Location("Desert");
             PositionType type = new PositionType("Quality control");
             CoreCompetency competency = new CoreCompetency("Persistence");
-            TechJob techJob1 = new TechJob("Product tester", employer, location, type, competency);
+            string tester = "Product tester";
+            TechJob techJob1 = new TechJob(tester, employer, location, type, competency);
             string expected = "\nID: " + techJob1.Id + "\nName: " + techJob1.Name + "\nEmployer: " + employer.Value + "\nLocation: " + location.Value + "\nPosition Type: " + type.Value + "\nCore Competency: " + competency.Value;
             techJob1.ToString().Equals(expected);
         }
@@ -75,9 +77,10 @@ namespace TechJobsTests
             Employer employer = new Employer("ACME");
             Location location = new Location("Desert");
             PositionType type = new PositionType("Quality control");
-            
-            TechJob techJob1 = new TechJob("Product tester", employer, location, type, null);
-            string expected = "\nID: " + techJob1.Id + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n";
+            CoreCompetency competency = new CoreCompetency("");
+            TechJob techJob1 = new TechJob("Product tester", employer, location, type, competency);
+            string expected = Environment.NewLine + "ID: " + techJob1.Id + Environment.NewLine + "Name: Product tester"+ Environment.NewLine + "Employer: ACME" + Environment.NewLine + "Location: Desert" + Environment.NewLine + "Position Type: Quality control" + Environment.NewLine + "Core Competency: Data not available" + Environment.NewLine;
+            techJob1.ToString().Equals(expected);
         }
 
         [TestMethod]

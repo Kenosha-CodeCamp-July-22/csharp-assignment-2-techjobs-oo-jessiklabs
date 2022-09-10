@@ -43,14 +43,21 @@ namespace TechJobsOO
         public override string ToString()
         {
             string fullString = "\nID: " + this.Id;
-            if(this.EmployerName != null)
+            if(this.Name != "")
             {
-                fullString += "\nName: " + this.EmployerName;
+                fullString += "\nName: " + this.Name;
             } else
             {
                 fullString += "\nName: Data not available";
             }
-            if (this.EmployerLocation != null)
+            if(this.EmployerName.Value != "")
+            {
+                fullString += "\nEmployer: " + this.EmployerName;
+            } else
+            {
+                fullString += "\nEmployer: Data not available";
+            }
+            if (this.EmployerLocation.Value != "")
             {
                 fullString += "\nLocation: " + this.EmployerLocation;
             }
@@ -58,7 +65,7 @@ namespace TechJobsOO
             {
                 fullString += "\nLocation: Data not available";
             }
-            if (this.JobType != null)
+            if (this.JobType.Value != "")
             {
                 fullString += "\nPosition Type: " + this.JobType;
             }
@@ -66,13 +73,13 @@ namespace TechJobsOO
             {
                 fullString += "\nPosition Type: Data not available";
             }
-            if (this.JobCoreCompetency != null)
+            if (this.JobCoreCompetency.Value != "")
             {
-                fullString += "\nCore Competency: " + this.JobCoreCompetency;
+                fullString += "\nCore Competency: " + this.JobCoreCompetency + "\n";
             }
             else
             {
-                fullString += "\nCore Competency: Data not available";
+                fullString += "\nCore Competency: Data not available" + "\n";
             }
             if(this.Name == null && this.EmployerName == null && this.EmployerLocation == null && this.JobType == null && this.JobCoreCompetency == null)
             {

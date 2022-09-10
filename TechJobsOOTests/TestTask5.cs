@@ -49,7 +49,7 @@ namespace TechJobsOOTests
         {
             //setup
             //comparing output to a text file.  id numbers may get a little wonky
-            string text = System.IO.File.ReadAllText("StartsAndEndsWithNewLine.txt").ToString();
+            string text = System.IO.File.ReadAllText("C:\\Users\\jojac\\Documents\\htmlcss\\LaunchCode\\csharp\\Assignment2\\TechJobsOOTests\\StartsAndEndsWithNewLine.txt").ToString();
 
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
@@ -141,7 +141,7 @@ namespace TechJobsOOTests
         {
                         //setup
             //comparing output to a text file.  id numbers may get a little wonky
-            string text = System.IO.File.ReadAllText("EmptyFieldTest.txt").ToString();
+            string text = System.IO.File.ReadAllText("C:\\Users\\jojac\\Documents\\htmlcss\\LaunchCode\\csharp\\Assignment2\\TechJobsOOTests\\EmptyFieldTest.txt").ToString();
 
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
